@@ -81,11 +81,13 @@
       var Allarrays = jsonToArray(healthCenters);
       var addMarkers = function(map,Allarrays) {
         for (i=1; i<Allarrays.length; i++){
+          if((Allarrays[i][5]>= 19140)&&(Allarrays[i][5]<= 19149)){
           // console.log(Allarrays[i]) // "LAT"
           // console.log([Allarrays[i][0],Allarrays[i][1]]);
           console.log(Allarrays[i][3]);
           L.marker([Allarrays[i][1],
                    Allarrays[i][0]]).bindPopup(Allarrays[i][3]).openPopup().addTo(map);
+          }
         }
       };
 
